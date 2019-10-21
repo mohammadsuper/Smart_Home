@@ -1,0 +1,43 @@
+const int ldr_led = 13;
+const int ldr_pin = A0;
+
+void setup() {
+
+Serial.begin(9600);
+
+pinMode(ldr_led, OUTPUT);
+
+pinMode(ldr_pin, INPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+if(ldr()){
+digitalWrite(ldr_led, HIGH);
+
+Serial.println("LDR is DARK, LED is ON");
+}
+else {
+
+digitalWrite(ldr_led, LOW);
+
+Serial.println("LED OFF");
+
+}
+
+}
+
+int ldr(){
+  
+
+int ldrStatus = analogRead(ldr_pin);
+
+if (ldrStatus >= 800) { 
+
+return 1;
+}
+return 0;
+
+}
