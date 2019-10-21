@@ -26,12 +26,8 @@ digitalWrite(ldr_led, LOW);
 Serial.println("LED OFF");
 
 }
-
 }
-
 int ldr(){
-  
-
 int ldrStatus = analogRead(ldr_pin);
 
 if (ldrStatus >= 800) { 
